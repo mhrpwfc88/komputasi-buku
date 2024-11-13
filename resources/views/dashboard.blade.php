@@ -38,22 +38,25 @@
                                  
                                 </tr>
                             </thead>
-                            <tbody class="bg-black">
+                            <tbody >
                                 @foreach ($kategoris as $kategori)
                                     
                             
-                                <tr>
+                                <tr >
                                     <td>{{ $kategori->nama }}</td>
                                     <td>{{ $kategori->keterangan }}</td>
                                     <td>{{ $kategori->status }}</td>
                                    <td>
-                                        {{-- <a href="{{ route('kategori.edit', $kategori->id_kategori) }}" class="text-blue-500">Edit</a> --}}
-
+                                        <a href="{{ route('kategori.edit', $kategori->id_kategori) }}" class="text-blue-500">
+                                            <button type="submit" class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
+                                                Edit
+                                               </button>
+                                        </a>
                                     <form action="{{ route('kategori.destroy', $kategori->id_kategori) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
-                                           hapus
+                                        <button type="submit" class="bg-red-600 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
+                                           Hapus   
                                           </button>
                                     </form>
                                    </td>

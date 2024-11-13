@@ -38,8 +38,10 @@ table.dataTable.hover tbody tr,
 table.dataTable.display tbody tr{
     background-color: white;
     color: black;
+    
    
 }
+
 /* Style the "Showing X to X of X entries" text */
 .dataTables_info {
     color: #4A5568; /* Text color */
