@@ -38,26 +38,31 @@ class KategoriController extends Controller
         return view('kategori.show', compact('kategori'));
     }
 
-    public function edit(string $id)
+    public function edit(string $id_kategori)
     {
-        $kategori = Kategori::findOrFail($id);
+        // Cari kategori berdasarkan id_kategori
+        $kategori = Kategori::findOrFail($id_kategori);
+    
         return view('kategori.edit', compact('kategori'));
     }
-
-    public function update(Request $request, string $id)
+    
+    public function update(Request $request, string $id_kategori)
     {
+        // Validasi input
         $request->validate([
-            'nama' => 'required|unique:kategori,nama,' . $id . ',id_kategori',
+            'nama' => 'required|unique:kategori,nama,' . $id_kategori . ',id_kategori',
             'keterangan' => 'nullable|string',
             'status' => 'required|in:aktif,nonaktif',
         ]);
-
-        $kategori = Kategori::findOrFail($id);
+    
+        // Cari kategori berdasarkan id_kategori
+        $kategori = Kategori::findOrFail($id_kategori);
         $kategori->update($request->all());
-
-        return redirect()->route('kategori.index')
+    
+        return redirect()->route('dashboard')
                          ->with('success', 'Kategori berhasil diperbarui.');
     }
+    
 
     public function destroy(string $id)
     {

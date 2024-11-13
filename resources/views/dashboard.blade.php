@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
+                    {{ __("Anda Berhasil Login!!") }}
                 </div>
                 
             </div>
@@ -52,10 +52,10 @@
                                                 Edit
                                                </button>
                                         </a>
-                                    <form action="{{ route('kategori.destroy', $kategori->id_kategori) }}" method="POST" style="display:inline;">
+                                    <form id="deleteForm" action="{{ route('kategori.destroy', $kategori->id_kategori) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="bg-red-600 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
+                                        <button onclick="return confirmDelete();" type="submit"  class="bg-red-600 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
                                            Hapus   
                                           </button>
                                     </form>
