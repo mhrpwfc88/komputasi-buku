@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Overrides for Tailwind CSS */
+
+/*Form fields*/
+.dataTables_wrapper select,
+.dataTables_wrapper .dataTables_filter input {
+    color: black;
+    /* text-gray-700 */
+    padding-left: 1rem;
+    /*pl-4*/
+    padding-right: 1rem;
+    /*pl-4*/
+    padding-top: 0.5rem;
+    /*pl-2*/
+    padding-bottom: 0.5rem;
+    /*pl-2*/
+    line-height: 1.25;
+    /*leading-tight*/
+    border-width: 2px;
+    /*border-2*/
+    border-radius: 0.25rem;
+    border-color: whi;
+    /*border-gray-200*/
+    background-color: white     ;
+    /*bg-gray-200*/
+}
+
+/*Row Hover*/
+table.dataTable.hover tbody tr:hover,
+table.dataTable.display tbody tr:hover {
+    background-color: white;
+    color: black;
+}
+table.dataTable.hover tbody tr,
+table.dataTable.display tbody tr{
+    background-color: white;
+    color: black;
+   
+}
+/* Style the "Showing X to X of X entries" text */
+.dataTables_info {
+    color: #4A5568; /* Text color */
+    background-color: #EDF2F7; /* Background color */
+    padding: 0.5rem; /* Padding around the text */
+    font-size: 1rem; /* Font size */
+    border-radius: 0.25rem; /* Optional: add rounded corners */
+}
+.dataTables_length label {
+    color: #4A5568; /* Text color for 'Show entries' */
+    font-weight: 600; /* Bold font */
+    font-size: 1rem; /* Font size */
+    margin-right: 0.5rem; /* Space between label and select box */
+}
+.dataTables_filter label {
+    color: #4A5568;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+/* Optional: Add a hover effect */
+.dataTables_info:hover {
+    background-color: #E2E8F0; /* Slightly darker on hover */
+    color: #2D3748; /* Darker text color on hover */
+}
+/*Pagination Buttons*/
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    font-weight: 700;
+
+    color: black    ;
+    /*font-bold*/
+    border-radius: 0.25rem;
+    /*rounded*/
+    border: 1px solid transparent;
+    /*border border-transparent*/
+}
+
+/*Pagination Buttons - Current selected */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    color: gray !important;
+    /*text-white*/
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    /*shadow*/
+    font-weight: 700;
+    /*font-bold*/
+    border-radius: 0.25rem;
+    /*rounded*/
+    background: white !important;
+    /*bg-indigo-500*/
+    border: 1px solid transparent;
+    /*border border-transparent*/
+}
+
+/*Pagination Buttons - Hover */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: gray !important;
+    /*text-white*/
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    /*shadow*/
+    font-weight: 700;
+    /*font-bold*/
+    border-radius: 0.25rem;
+    /*rounded*/
+    background: white !important;
+    /*bg-indigo-500*/
+    border: 1px solid transparent;
+    /*border border-transparent*/
+}
+
+/*Add padding to bottom border */
+table.dataTable.no-footer {
+    border-bottom: 1px solid gray;
+    /*border-b-1 border-gray-300*/
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+}
+
+/*Change colour of responsive icon*/
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
+    background-color: #ffffff !important;
+    /*bg-indigo-500*/
+}
