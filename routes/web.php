@@ -23,6 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::put('/kategori/{id}', [KategoriController::class, 'update'])->name('kategori.update');
     Route::delete('/kategori/{id}', [KategoriController::class, 'destroy'])->name('kategori.destroy');
     // buku route
+    Route::get('/buku', [bukuController::class, 'create'])->name('buku.create');
+    
 });
 
 require __DIR__ . '/auth.php';
