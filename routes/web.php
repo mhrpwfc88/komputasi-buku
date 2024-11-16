@@ -9,7 +9,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', [KategoriController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     // profile route
@@ -17,13 +20,16 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     // kategori route
-    Route::get('/kategori', [KategoriController::class, 'create'])->name('kategori.create');
+    Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
+    Route::get('/kategori/create', [KategoriController::class, 'create'])->name('kategori.create');
     Route::post('/kategori', [KategoriController::class, 'store'])->name('kategori.store');
     Route::get('/kategori/{id}/edit', [KategoriController::class, 'edit'])->name('kategori.edit');
     Route::put('/kategori/{id}', [KategoriController::class, 'update'])->name('kategori.update');
     Route::delete('/kategori/{id}', [KategoriController::class, 'destroy'])->name('kategori.destroy');
     // buku route
-    Route::get('/buku', [bukuController::class, 'create'])->name('buku.create');
+    Route::get('/buku', [bukuController::class, 'index'])->name('buku.index');
+    Route::get('/buku/create', [bukuController::class, 'create'])->name('buku.create');
+
     
 });
 

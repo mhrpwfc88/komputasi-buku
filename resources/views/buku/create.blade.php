@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Tambah Kategori') }}
+            {{ __('Tambah Buku') }}
         </h2>
     </x-slot>
 
@@ -18,6 +18,32 @@
                 <div id='recipients' class="p-8 mt-6 lg:mt-0 text-white  dark:bg-gray-800 rounded shadow ">
                     <form action="{{ route('kategori.store') }}" method="POST">
                         @csrf
+                        <div class="md:flex mb-6">
+                            <div class="md:w-1/3">
+                                <label class="block text-white font-bold md:text-left mb-3 md:mb-0 pr-4"
+                                    for="my-select">
+                                    Kategori
+                                </label>
+                            </div>
+                            <div class="md:w-2/3">
+                                <select name="status"
+                                    class="form-select text-black block w-full rounded-md focus:bg-gray-500"
+                                    id="status">
+                                    @foreach ($kategoris as $kategori)
+                                    <option value="aktif" {{ old('status') == 'aktif' ? 'selected' : '' }}>Aktif
+                                    </option>
+                                    <option value="nonaktif" {{ old('status') == 'nonaktif' ? 'selected' : '' }}>
+                                        Nonaktif
+                                    </option>
+                                    @endforeach
+                                   
+                                </select>
+                                <p class="py-2 text-sm text-gray-600">Pilih status kategori</p>
+                                @error('status')
+                                    <span>{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="md:flex mb-6">
                             <div class="md:w-1/3">
                                 <label class="block text-white font-bold md:text-left mb-3 md:mb-0 pr-4"

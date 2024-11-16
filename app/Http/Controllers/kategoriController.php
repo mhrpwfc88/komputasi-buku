@@ -10,9 +10,8 @@ class KategoriController extends Controller
     public function index()
     {
         $kategoris = kategori::all();
-        return view('dashboard', compact('kategoris'));
+        return view('kategori.index', compact('kategoris'));
     }
-
     public function create()
     {
         return view('kategori.create');
@@ -28,7 +27,7 @@ class KategoriController extends Controller
 
         Kategori::create($request->all());
 
-        return redirect()->route('dashboard')
+        return redirect()->route('kategori.index')
                          ->with('success', 'Kategori berhasil ditambahkan.');
     }
 
@@ -59,7 +58,7 @@ class KategoriController extends Controller
         $kategori = Kategori::findOrFail($id_kategori);
         $kategori->update($request->all());
     
-        return redirect()->route('dashboard')
+        return redirect()->route('kategori.index')
                          ->with('success', 'Kategori berhasil diperbarui.');
     }
     
@@ -69,7 +68,7 @@ class KategoriController extends Controller
         $kategori = Kategori::findOrFail($id);
         $kategori->delete();
 
-        return redirect()->route('dashboard')
+        return redirect()->route('kategori.index')
                          ->with('success', 'Kategori berhasil dihapus.');
     }
 }

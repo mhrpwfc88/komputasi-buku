@@ -21,12 +21,12 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     Menu
                 </div>
-                <a href="{{route('kategori.index')}}">
+                <a href="">
                 <button class="mb-5 font-semibold ml-5 rounded-md p-3 bg-white text-gray-900 ">
                     Kategori 
                 </button>
             </a>
-                <a href="{{route('buku.index')}}">
+            <a href="{{route('buku.index')}}">
                 <button class="mb-5 px-4 font-semibold ml-5 rounded-md p-3 bg-white text-gray-900 ">
                     Buku 
                 </button>
@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <a href="{{ route('kategori.create') }}">
@@ -93,7 +93,7 @@
                 </div>
                 
             </div>
-        </div> --}}
+        </div>
 
 
 </x-app-layout>

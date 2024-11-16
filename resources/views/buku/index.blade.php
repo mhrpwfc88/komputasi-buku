@@ -35,12 +35,12 @@
         </div>
     </div>
 
-    {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <a href="{{ route('kategori.create') }}">
+                    <a href="{{ route('buku.create') }}">
                         <button class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
-                            Tambah Kategori
+                            Tambah Buku
                           </button>
                     </a>
                     <div id='recipients' class="p-8 mt-6 lg:mt-0 text-white  dark:bg-gray-800 rounded shadow ">
@@ -50,21 +50,19 @@
                         <table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
                             <thead>
                                 <tr>
-                                    <th data-priority="1">Name</th>
-                                    <th data-priority="2">keterangan</th>
-                                    <th data-priority="3">status</th>
+                                    <th data-priority="1">Judul</th>
+                                    <th data-priority="2">Deskripsi</th>
+                                    <th data-priority="3">Penulis</th>
                                     <th data-priority="4">aksi</th>
                                  
                                 </tr>
                             </thead>
                             <tbody >
-                                @foreach ($kategoris as $kategori)
-                                    
-                            
+                                @foreach ($bukus as $buku)
                                 <tr >
-                                    <td>{{ $kategori->nama }}</td>
-                                    <td>{{ $kategori->keterangan }}</td>
-                                    <td>{{ $kategori->status }}</td>
+                                    <td>{{ $buku->nama }}</td>
+                                    <td>{{ $buku->keterangan }}</td>
+                                    <td>{{ $buku->status }}</td>
                                    <td>
                                         <a href="{{ route('kategori.edit', $kategori->id_kategori) }}" class="text-blue-500">
                                             <button type="submit" class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
@@ -93,7 +91,7 @@
                 </div>
                 
             </div>
-        </div> --}}
+        </div>
 
 
 </x-app-layout>
