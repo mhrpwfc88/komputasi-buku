@@ -29,6 +29,11 @@ Route::middleware('auth')->group(function () {
     // buku route
     Route::get('/buku', [bukuController::class, 'index'])->name('buku.index');
     Route::get('/buku/create', [bukuController::class, 'create'])->name('buku.create');
+    Route::post('/buku', [bukuController::class, 'store'])->name('buku.store');
+    Route::get('/buku/{id}', [bukuController::class, 'show'])->name('buku.detail');
+    Route::get('/buku/{id}/edit', [bukuController::class, 'edit'])->name('buku.edit');
+    Route::put('/buku/{id}', [bukuController::class, 'update'])->name('buku.update');
+    Route::delete('/buku/{id}', [bukuController::class, 'destroy'])->name('buku.destroy');
 
     
 });

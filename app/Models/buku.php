@@ -12,4 +12,8 @@ class buku extends Model
     protected $table = 'buku';
     protected $primaryKey = 'id_buku';
     protected $fillable = ['kategori_id','judul','deskripsi','penulis','cover','status'];
+    public function kategori()
+{
+    return $this->belongsTo(Kategori::class, 'kategori_id', 'id_kategori');
+}
 }

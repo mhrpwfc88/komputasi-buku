@@ -5,32 +5,45 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __('Anda Berhasil Login!!') }}
+    @if (session('success'))
+        <div class="py-7">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                        {{ session('success') }}
+                    </div>
                 </div>
-
             </div>
         </div>
-    </div>
-    <div class="py-12">
+    @endif
+    @if (session('error'))
+        <div class="py-7">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                        {{ session('error') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
+    <div class="py-7">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     Menu
                 </div>
-                <a href="{{route('kategori.index')}}">
-                <button class="mb-5 font-semibold ml-5 rounded-md p-3 bg-white text-gray-900 ">
-                    Kategori 
-                </button>
-            </a>
-                <a href="{{route('buku.index')}}">
-                <button class="mb-5 px-4 font-semibold ml-5 rounded-md p-3 bg-white text-gray-900 ">
-                    Buku 
-                </button>
-            </a>
+                <a href="{{ route('kategori.index') }}">
+                    <button class="mb-5 font-semibold ml-5 rounded-md p-3 bg-white text-gray-900 ">
+                        Kategori
+                    </button>
+                </a>
+                <a href="{{ route('buku.index') }}">
+                    <button class="mb-5 px-4 font-semibold ml-5 rounded-md p-3 bg-white text-gray-900 ">
+                        Buku
+                    </button>
+                </a>
             </div>
         </div>
     </div>
