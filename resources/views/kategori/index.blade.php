@@ -77,6 +77,11 @@
                                     <td>{{ $kategori->keterangan }}</td>
                                     <td>{{ $kategori->status }}</td>
                                     <td>
+                                        <a href="{{ route('kategori.detail', $kategori->id_kategori) }}" class="text-blue-500">
+                                            <button type="submit" class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
+                                                Detail
+                                               </button>
+                                        </a>
                                         <a href="{{ route('kategori.edit', $kategori->id_kategori) }}"
                                             class="text-blue-500">
                                             <button type="submit"
