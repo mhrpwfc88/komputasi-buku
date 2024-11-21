@@ -15,7 +15,7 @@ return new class extends Migration
             $table->integer('id_buku')->autoIncrement()->unsigned();
             $table->integer('kategori_id')->unsigned();
             $table->string('judul')->unique();
-            $table->string('deskripsi');
+            $table->text('deskripsi');
             $table->string('penulis');
             $table->string('cover');
             $table->enum('status', ['aktif', 'nonaktif'])->default('aktif');

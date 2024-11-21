@@ -26,7 +26,6 @@
             </div>
         </div>
     @endif
-
     <div class="py-7">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
@@ -46,7 +45,6 @@
             </div>
         </div>
     </div>
-
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
@@ -67,7 +65,6 @@
                                 <th data-priority="2">keterangan</th>
                                 <th data-priority="3">status</th>
                                 <th data-priority="4">aksi</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -89,32 +86,14 @@
                                                 Edit
                                             </button>
                                         </a>
-                                        <form id="deleteForm"
-                                            action="{{ route('kategori.destroy', $kategori->id_kategori) }}"
-                                            method="POST" style="display:inline;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button onclick="return confirmDelete();" type="submit"
-                                                class="bg-red-600 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
-                                                Hapus
-                                            </button>
-                                        </form>
+                                      
                                     </td>
                                 </tr>
                             @endforeach
-
-
                         </tbody>
-
                     </table>
-
-
                 </div>
-
             </div>
-
         </div>
     </div>
-
-
 </x-app-layout>

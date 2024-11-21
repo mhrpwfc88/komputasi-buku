@@ -3,16 +3,20 @@
 use App\Http\Controllers\bukuController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProfileController;
+use App\Models\buku;
+use App\Models\kategori;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $bukus = buku::all();
+    $kategoris = kategori::all();
+    return view('welcome', compact('bukus','kategoris'));
 });
 
 Route::get('/admin', function () {
+    
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
 
 Route::middleware('auth')->group(function () {
     // profile route
@@ -35,8 +39,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/buku/{id}/edit', [bukuController::class, 'edit'])->name('buku.edit');
     Route::put('/buku/{id}', [bukuController::class, 'update'])->name('buku.update');
     Route::delete('/buku/{id}', [bukuController::class, 'destroy'])->name('buku.destroy');
-
-    
 });
 
 require __DIR__ . '/auth.php';
